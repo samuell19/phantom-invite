@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#100909" />
+    <title>Um convite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="stage">
+      <div class="curtain curtain-left"></div>
+      <div class="curtain curtain-right"></div>
+      <div class="spotlight"></div>
+      <div class="mist mist-one"></div>
+      <div class="mist mist-two"></div>
+
+      <section class="invitation" aria-live="polite">
+        <div class="mark" aria-hidden="true"><span></span><i></i><span></span></div>
+        <p class="overline">UMA NOITE NO TEATRO</p>
+        <div class="mask" aria-hidden="true"><b></b><b></b><em></em></div>
+        <h1>Posso te fazer<br />um convite?</h1>
+        <p class="question">Você iria ao baile de máscaras comigo?</p>
+
+        <div class="choices" id="choices">
+          <button class="yes" id="yesButton" type="button">Sim, eu iria</button>
+          <button class="no" id="noButton" type="button" aria-label="Não (esta resposta está indisponível)">Não</button>
+        </div>
+
+        <p class="song-credit">Ao som de <a href="https://open.spotify.com/search/Body%20Mother%20Mother" target="_blank" rel="noreferrer">Body - Mother Mother</a></p>
+      </section>
+
+      <section class="answer" id="answer" hidden>
+        <p class="overline">ENTAO ESTA COMBINADO</p>
+        <div class="rose" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
+        <h2>Eu sabia que<br />você diria sim.</h2>
+        <p>Uma noite bonita, uma máscara e você comigo.</p>
+        <a class="music-link" href="https://open.spotify.com/search/Body%20Mother%20Mother" target="_blank" rel="noreferrer">Ouvir Body <span aria-hidden="true">&rarr;</span></a>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
