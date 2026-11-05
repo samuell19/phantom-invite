@@ -20,7 +20,6 @@
 
       <section class="invitation" aria-live="polite">
         <div class="mark" aria-hidden="true"><span></span><i></i><span></span></div>
-        <p class="overline">QUANDO O SOL BAIXAR</p>
         <div class="mask" aria-hidden="true"><b></b><b></b><em></em></div>
         <h1>Posso te fazer<br />um convite?</h1>
         <p class="question">Você iria ver o pôr do sol na praia comigo?</p>
@@ -30,7 +29,6 @@
           <button class="no" id="noButton" type="button" aria-label="Não (esta resposta está indisponível)">Não</button>
         </div>
 
-        <button class="song-credit" id="musicToggleIntro" type="button">Tocar Body - Mother Mother</button>
       </section>
 
       <section class="answer" id="answer" hidden>
@@ -38,9 +36,8 @@
         <div class="rose" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
         <h2>Eu sabia que<br />você diria sim.</h2>
         <p>Uma praia, o sol baixando e você comigo.</p>
-        <button class="music-link" id="musicToggleFinal" type="button">Tocar Body <span aria-hidden="true">&rarr;</span></button>
       </section>
-      <audio id="bodySong" preload="metadata" src="/music/mother-mother-body.m4a"></audio>
+      <audio id="bodySong" autoplay preload="auto" src="/music/mother-mother-body.m4a"></audio>
     </main>
     <script type="module" src="/src/main.js"></script>
   </body>

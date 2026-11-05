@@ -6,30 +6,11 @@ const choices = document.querySelector("#choices");
 const invitation = document.querySelector(".invitation");
 const answer = document.querySelector("#answer");
 const bodySong = document.querySelector("#bodySong");
-const musicToggles = [
-  document.querySelector("#musicToggleIntro"),
-  document.querySelector("#musicToggleFinal"),
-];
 
-function syncMusicLabels() {
-  const playing = !bodySong.paused;
-  musicToggles[0].textContent = playing ? "Pausar Body - Mother Mother" : "Tocar Body - Mother Mother";
-  musicToggles[1].innerHTML = `${playing ? "Pausar Body" : "Tocar Body"} <span aria-hidden="true">&rarr;</span>`;
-}
-
-async function toggleMusic() {
-  if (bodySong.paused) {
-    try {
-      await bodySong.play();
-    } catch {
-      return;
-    }
-  } else {
-    bodySong.pause();
-  }
-
-  syncMusicLabels();
-}
+// Browsers may still require a gesture before allowing audible autoplay.
+bodySong.play().catch(() => {});
+window.addEventListener("pointerdown", () => bodySong.play().catch(() => {}), { once: true });
+window.addEventListener("keydown", () => bodySong.play().catch(() => {}), { once: true });
 
 function moveNoButton() {
   const bounds = choices.getBoundingClientRect();
@@ -54,6 +35,7 @@ noButton.addEventListener("focus", evade);
 
 yesButton.addEventListener("click", () => {
   invitation.classList.add("leaving");
+  document.querySelector(".stage").classList.add("accepted");
 
   window.setTimeout(() => {
     invitation.hidden = true;
@@ -61,11 +43,6 @@ yesButton.addEventListener("click", () => {
     answer.classList.add("visible");
   }, 260);
 });
-
-musicToggles.forEach((button) => button.addEventListener("click", toggleMusic));
-bodySong.addEventListener("play", syncMusicLabels);
-bodySong.addEventListener("pause", syncMusicLabels);
-bodySong.addEventListener("ended", syncMusicLabels);
 
 window.addEventListener("resize", () => {
   if (noButton.dataset.evaded) moveNoButton();
