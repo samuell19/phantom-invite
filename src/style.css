@@ -144,7 +144,7 @@ h2 { font-size: clamp(43px, 12vw, 61px); line-height: .9; }
 }
 .yes { position: absolute; z-index: 2; left: 50%; top: 0; width: 208px; transform: translateX(-50%); color: #271510; background: #e8c98d; box-shadow: 0 8px 24px #0006; }
 .yes:hover, .yes:focus-visible { background: #f3dbab; transform: translateX(-50%) translateY(-2px); }
-.no { position: absolute; left: 0; top: 84px; min-width: 88px; color: #eacb96; background: #180d0dba; }
+.no { position: absolute; left: 50%; top: 84px; min-width: 88px; color: #eacb96; background: #180d0dba; transform: translateX(-50%); }
 .no:focus-visible, .yes:focus-visible, .music-link:focus-visible { outline: 2px solid #fff1cc; outline-offset: 4px; }
 
 .song-credit { margin: 0; color: #d7bd91aa; font-size: 10px; }
