@@ -147,8 +147,10 @@ h2 { font-size: clamp(43px, 12vw, 61px); line-height: .9; }
   color: #f5e4c8;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 25px;
+  font-weight: 600;
   font-style: italic;
   line-height: 1.05;
+  text-shadow: 0 2px 3px #351220d9, 0 0 18px #351220c9;
 }
 
 .choices {
