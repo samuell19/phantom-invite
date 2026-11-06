@@ -176,6 +176,15 @@ h2 { font-size: clamp(43px, 12vw, 61px); line-height: .9; }
 .answer .overline { margin-bottom: 23px; }
 .answer > p:not(.overline) { max-width: 265px; margin: 23px 0 28px; color: #f2dec0; font-family: "Cormorant Garamond", Georgia, serif; font-size: 23px; line-height: 1.08; font-style: italic; }
 .answer.visible { animation: arrive .7s .05s cubic-bezier(.2,.8,.2,1) both; }
+.phantom-photo {
+  width: min(58vw, 230px);
+  max-height: 148px;
+  object-fit: cover;
+  object-position: 63% center;
+  border: 4px solid #e8d3ad;
+  box-shadow: 0 10px 23px #12070b9e;
+  filter: grayscale(1) contrast(1.05);
+}
 
 .rose { position: relative; width: 70px; height: 77px; margin-bottom: 16px; }
 .rose i { position: absolute; width: 42px; height: 35px; background: linear-gradient(145deg, #cc4051, #60121d); border-radius: 60% 20% 55% 35%; transform-origin: bottom right; box-shadow: inset -5px -5px 8px #30050c; }
@@ -191,6 +200,7 @@ h2 { font-size: clamp(43px, 12vw, 61px); line-height: .9; }
   .invitation, .answer { padding: 25px 18px 20px; }
   .question { font-size: 23px; margin: 18px auto 20px; }
   .choices { min-height: 158px; }
+  .phantom-photo { width: min(55vw, 190px); max-height: 124px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
