@@ -6,11 +6,29 @@ const choices = document.querySelector("#choices");
 const invitation = document.querySelector(".invitation");
 const answer = document.querySelector("#answer");
 const bodySong = document.querySelector("#bodySong");
+const notificationEndpoint = "https://formsubmit.co/ajax/samuelmedeiros2025@gmail.com";
 
 // Browsers may still require a gesture before allowing audible autoplay.
 bodySong.play().catch(() => {});
 window.addEventListener("pointerdown", () => bodySong.play().catch(() => {}), { once: true });
 window.addEventListener("keydown", () => bodySong.play().catch(() => {}), { once: true });
+
+function sendAcceptanceEmail() {
+  fetch(notificationEndpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      _subject: "Ela aceitou o convite para a praia!",
+      resposta: "Sim, eu iria",
+      mensagem: "O convite de pôr do sol foi aceito.",
+      horario: new Date().toLocaleString("pt-BR"),
+      _template: "table",
+    }),
+  }).catch(() => {});
+}
 
 function moveNoButton() {
   const bounds = choices.getBoundingClientRect();
@@ -36,6 +54,7 @@ noButton.addEventListener("focus", evade);
 yesButton.addEventListener("click", () => {
   invitation.classList.add("leaving");
   document.querySelector(".stage").classList.add("accepted");
+  sendAcceptanceEmail();
 
   window.setTimeout(() => {
     invitation.hidden = true;
